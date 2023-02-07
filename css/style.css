@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'custom';
+    src: url('../font/PPRightSans-VariableVF.woff2');
+}
+
+body {
+	display: flex;
+    flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	min-height: 100vh;
+    background-color: #181818;
+}
+
+
+h1 {
+    text-transform: uppercase;
+    font-family: 'custom';
+	font-weight: 100;
+	font-size: 21vw;
+	line-height: 80%;
+	font-variation-settings: 'wdth' 100;
+    color: #f1f1f1;
+    margin: 0;
+}
+
+h1 .char {
+	/* --delay: calc((var(--char-index) + 1) * 400ms); */
+	/* animation: breathe 4000ms infinite both; */
+	/* animation-delay: var(--delay); */
+    font-variation-settings: 'wdth' 100;
+    transition: font-variation-settings 800ms ease-out;
+}
+/*
+h1:hover span {
+	animation-play-state: paused;
+} */
+h1 .char:nth-child(2) {
+    font-variation-settings: 'wdth' 900;
+    transition: font-variation-settings 800ms ease-out;
+}
+h1:hover .char:nth-child(2){
+    font-variation-settings: 'wdth' 100;
+}
+h1 .char:hover, h1 .char:nth-child(2):hover {
+    font-variation-settings: 'wdth' 900;
+}
+
+@keyframes breathe {
+	0% {
+		font-variation-settings:'wdth' 100;
+	}
+	60% {
+		font-variation-settings:'wdth' 900;
+	}
+
+	100% {
+		font-variation-settings: 'wdth' 100;
+	}
+}
+
+button {
+	background-color: #FF4D00;
+	border-radius: 8px;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-variation-settings: 'wdth' 400;
+	color: #181818;
+	font-size: 24px;
+	position: fixed;
+	bottom: 3vw;
+	left: 3vw;
+	border: 0;
+	transition: all 0.1s ease-out;
+}
+button a {
+	text-decoration: none;
+	color: #181818;
+	display: block;
+	padding: 24px 32px;
+}
+button:hover {
+	transform: translateY(-10px);
+}
